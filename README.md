@@ -1,4 +1,4 @@
-# INIT
+# Getting Started
 
 ### Installation
 
@@ -52,5 +52,7 @@ docker-compose down -v
 ### Make a /users/:id page
 
 1. We are not trying to test for nextjs knowledge. You can create the route in the pages folder with /users/[id].
+- https://nextjs.org/docs/routing/introduction
+- https://nextjs.org/docs/routing/dynamic-routes
 2. Have it display the user by that id.
 3. If there is no user with that id display an error.

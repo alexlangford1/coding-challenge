@@ -1,4 +1,6 @@
-# INIT
+# Getting Started
+
+##### Please fork the repository.
 
 ### Installation
 
@@ -40,19 +42,19 @@ docker-compose down -v
 
 # Test
 
-## Use Material UI for designs and css
+## Use Material UI for all designs and css
 
-## Bonus points for making the website scale well.
+##### We are looking for how you break up your code, manage state, can reuse existing code, and knowledge of sequelize/material ui and react. Bonus points for making the website scale well.
 
 ### Make a /users page
 
-1. Create a /users route in the API and navigationa
+1. Create a /users route in the API and navigation
 2. Get all users and display them in a table
 
 ### Make a /users/:id page
 
-1. Since we are not testing on nextjs, a hint will be to make the route called /users/[id].
+1. We are not trying to test for nextjs knowledge. You can create the route in the pages folder with /users/[id].
+- https://nextjs.org/docs/routing/introduction
+- https://nextjs.org/docs/routing/dynamic-routes
 2. Have it display the user by that id.
 3. If there is no user with that id display an error.
-
-##### We are looking for how you break up your code, manage state, can reuse existing code, and knowledge of sequelize/material ui and react.

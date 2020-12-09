@@ -1,5 +1,4 @@
 import React from 'react';
-import useMe from '@hooks/useMe';
 import { useTheme, Theme } from '@material-ui/core/styles';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import AppBar from '@material-ui/core/AppBar';
@@ -11,7 +10,6 @@ import Logo from 'components/Logo/Logo';
 export default function Navbar() {
   const theme: Theme = useTheme();
   const mobile: boolean = useMediaQuery(theme.breakpoints.down('sm'));
-  const { data: me }: any = useMe();
   return (
     <AppBar>
       <Toolbar>

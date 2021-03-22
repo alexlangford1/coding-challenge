@@ -35,6 +35,8 @@ function errorResponseHandler(error: any) {
   ) {
     removeJwtToken();
     window.location.href = '/login';
+    console.log('hi');
+    
   }
   const err = new Error(errorMessage);
   console.error(err);

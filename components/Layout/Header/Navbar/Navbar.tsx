@@ -1,13 +1,25 @@
-import React from 'react';
-import { useTheme, Theme } from '@material-ui/core/styles';
-import useMediaQuery from '@material-ui/core/useMediaQuery';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Grid from '@material-ui/core/Grid';
-import Box from '@material-ui/core/Box';
+import { useState } from 'react';
+import {
+  useTheme,
+  Theme,
+  AppBar,
+  Toolbar,
+  Grid,
+  Box,
+  useMediaQuery,
+} from '@material-ui/core';
 import Logo from 'components/Logo/Logo';
+import Input from '../../../SearchInput/Input';
+import useSWR from 'swr'
 
 export default function Navbar() {
+  const [lisher, setId] = useState('');
+
+  const submitHandler = () => {
+    const fetcher = (url) => fetch(url).then((res) => res.json());
+    const { data, error } = useSWR(`/api/v1/users/${lisher}`, fetcher);
+  };
+
   const theme: Theme = useTheme();
   const mobile: boolean = useMediaQuery(theme.breakpoints.down('sm'));
   return (
@@ -15,7 +27,12 @@ export default function Navbar() {
       <Toolbar>
         <Grid container justify="space-between">
           {mobile ? (
-            <Grid item container alignItems="center" justify="space-between">
+            <Grid
+              container
+              direction="row"
+              alignItems="center"
+              justify="space-between"
+            >
               <Grid item container xs={11} sm={11} alignItems="center">
                 <Grid item xs={5} sm={4}>
                   <Box pr={2}>
@@ -23,15 +40,24 @@ export default function Navbar() {
                       <Logo size={20} />
                     </Grid>
                   </Box>
+                  <Input />
                 </Grid>
               </Grid>
             </Grid>
           ) : (
-            <Grid item>
+            <Grid
+              container
+              direction="row"
+              justify="space-between"
+              alignItems="center"
+            >
               <Box p={2}>
                 <Grid container alignItems="center">
                   <Logo size={24} />
                 </Grid>
+              </Box>
+              <Box>
+                <Input />
               </Box>
             </Grid>
           )}

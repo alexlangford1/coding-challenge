@@ -22,3 +22,4 @@ const route = async (req, res) => {
 };
 
 export default route;
+  
